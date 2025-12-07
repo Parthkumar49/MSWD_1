@@ -1,4 +1,4 @@
-let num = 4;   // change this to 1, 2, 4 or any number you want
+let num = 4;   
 
 if (num === 1) {
     console.log("Neither prime nor composite");
@@ -22,3 +22,4 @@ else {
         console.log("Composite Number");
     }
 }
+
