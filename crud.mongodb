@@ -1,0 +1,55 @@
+// want to see databases in mongodb
+show dbs;
+
+// crate new database 6A18
+use 6A18;
+
+db.createCollection("students");
+
+// insert one document into students collection
+db.students.insertOne(
+    {
+    id : 101,
+    name : "parth",
+    course : "CSE",
+    age : 20
+}
+);
+
+// fetch all documents from students collection(no need to write pretty)
+db.students.find().pretty();
+
+//insert many records
+db.students.insertMany(
+    [
+        {
+             id : 102,
+            name : "arth",
+            course : "AI",
+            age : 21
+        },
+        {
+             id : 103,
+            name : "parthvi",
+            course : "ML",
+            age : 23
+        },
+        {
+             id : 104,
+             name : "param",
+             course : "CYBER",
+             age : 24
+        }
+    ]
+)
+//update one document in students collection
+db.students.updateOne({id:101},{$set:{course:"MEAN"}})
+
+//update many documents in student collection
+db.students.updateMany({},{$set:{status:"Active"}})
+
+db.students.find({age:{$gt:21}}).count();
+
+//delete then GIT to mongodb code commit git push
+//delete one document from students collection
+db.students.deleteOne({id:104});
